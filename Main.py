@@ -1,5 +1,6 @@
-def menu(self):
-    lista = listaenlazada()
+from LinkedList import LinkedList
+def menu():
+    lista = LinkedList()
 
     while True:  
         print("\n1. Insertar al inicio")
@@ -52,3 +53,5 @@ def menu(self):
 
             case _:
                 print("Opción inválida")
+
+menu()
