@@ -20,4 +20,10 @@ class LinkedList:
             current = current.next
         
         current.next = new_node
-    
+    def mostrar_lista(self):
+        actual = self.head
+        while actual:
+            print(actual.data)
+            actual = actual.next
+
+            print ("Lista vacía")
