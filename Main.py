@@ -25,8 +25,10 @@ def menu():
                 lista.insert_at_beginning(new_node)
 
             case 2:
-                print("Insertar al final")
-                # lista.insertar_final(valor)
+                data = input("Ingrese la data del nuevo nodo: ")
+                new_node = Node(data)
+                lista.insert_at_end(new_node)
+                
 
             case 3:
                 print("Mostrar lista")
