@@ -1,6 +1,4 @@
 def menu(self):
-    lista = listaenlazada()
-
     while True:  
         print("\n1. Insertar al inicio")
         print("2. Insertar al final")
