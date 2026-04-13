@@ -45,6 +45,7 @@ def menu():
 
             case 8:
                 print("Invertir lista")
+                lista.invertir_lista()
 
             case 9:
                 print("Ordenar lista")

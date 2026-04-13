@@ -47,4 +47,15 @@ class LinkedList:
             anterior = actual
             actual = actual.next
             print("Valor no encontrado en la lista")
-            
+
+    def invertir_lista(self):
+        actual = self.head
+        anterior = None
+
+        while actual is not None:
+            siguiente = actual.next
+            actual.next = anterior
+            anterior = actual
+            actual = siguiente
+
+            self.head = anterior 
