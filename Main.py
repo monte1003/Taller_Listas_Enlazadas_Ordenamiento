@@ -44,6 +44,7 @@ def menu():
 
             case 7:
                 print("Tamaño de la lista")
+                print("Tamaño de la lista:", lista.tamaño())
 
             case 8:
                 print("Invertir lista")
