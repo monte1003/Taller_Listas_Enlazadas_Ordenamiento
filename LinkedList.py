@@ -27,3 +27,24 @@ class LinkedList:
             actual = actual.next
 
             print ("Lista vacía")
+
+    def eliminar_por_valor(self, valor):
+        actual = self.head
+        anterior = None
+
+        if actual is None:
+            print("Esta lista esta vacía")
+            return
+        
+        if actual.data == valor:
+            self.head = actual.next
+            return
+        
+        while actual is not None:
+            if actual.data == valor:
+                anterior.next = actual.next
+                return
+            anterior = actual
+            actual = actual.next
+            print("Valor no encontrado en la lista")
+            
