@@ -41,6 +41,8 @@ def menu():
 
             case 6:
                 print("Eliminar por valor")
+                valor = int(input("Ingrese el valor a eliminar: "))
+                lista.eliminar_por_valor(valor)
 
             case 7:
                 print("Tamaño de la lista")
@@ -48,6 +50,7 @@ def menu():
 
             case 8:
                 print("Invertir lista")
+                lista.invertir_lista()
 
             case 9:
                 print("Ordenar lista")

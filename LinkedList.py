@@ -20,13 +20,42 @@ class LinkedList:
             current = current.next
         
         current.next = new_node
-    
-    def show(self, data):
-        output = None
-        if(self.head is not None):
-            current = self.head
-            while current.next is not None:
-                output += str(curre.data)
-                current = current.next
-        else:
-            print("La lista estas vacia")   
+    def mostrar_lista(self):
+        actual = self.head
+        while actual:
+            print(actual.data)
+            actual = actual.next
+
+            print ("Lista vacía")
+
+    def eliminar_por_valor(self, valor):
+        actual = self.head
+        anterior = None
+
+        if actual is None:
+            print("Esta lista esta vacía")
+            return
+        
+        if actual.data == valor:
+            self.head = actual.next
+            return
+        
+        while actual is not None:
+            if actual.data == valor:
+                anterior.next = actual.next
+                return
+            anterior = actual
+            actual = actual.next
+            print("Valor no encontrado en la lista")
+
+    def invertir_lista(self):
+        actual = self.head
+        anterior = None
+
+        while actual is not None:
+            siguiente = actual.next
+            actual.next = anterior
+            anterior = actual
+            actual = siguiente
+
+            self.head = anterior 
