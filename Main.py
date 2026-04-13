@@ -1,4 +1,5 @@
 from LinkedList import LinkedList
+from Node import Node
 def menu():
     lista = LinkedList()
 
@@ -19,15 +20,18 @@ def menu():
         match opcion:
             case 1:
                 print("Insertar al inicio")
-                # lista.insertar_inicio(valor)
+                data = input("Ingrese la data del nuevo nodo: ")
+                new_node = Node(data)
+                lista.insert_at_beginning(new_node)
 
             case 2:
-                print("Insertar al final")
-                # lista.insertar_final(valor)
+                data = input("Ingrese la data del nuevo nodo: ")
+                new_node = Node(data)
+                lista.insert_at_end(new_node)
+                
 
             case 3:
-                print("Mostrar lista")
-                # lista.mostrar()
+                lista.show()
 
             case 4:
                 print("Buscar elemento")
@@ -42,6 +46,7 @@ def menu():
 
             case 7:
                 print("Tamaño de la lista")
+                print("Tamaño de la lista:", lista.tamaño())
 
             case 8:
                 print("Invertir lista")
