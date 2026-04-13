@@ -1,7 +1,7 @@
 from Node import Node
 class LinkedList:
     def __init__(self):
-        self.head = none
+        self.head = None
 
     def insert_at_beginning(self, data):
         new_node = Node(data)
@@ -16,8 +16,17 @@ class LinkedList:
             return
         
         current = self.head
-        while current.next is not None
+        while current.next is not None:
             current = current.next
         
         current.next = new_node
     
+    def show(self, data):
+        output = None
+        if(self.head is not None):
+            current = self.head
+            while current.next is not None:
+                output += str(curre.data)
+                current = current.next
+        else:
+            print("La lista estas vacia")   
