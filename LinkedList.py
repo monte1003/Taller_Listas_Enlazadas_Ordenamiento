@@ -20,42 +20,49 @@ class LinkedList:
             current = current.next
         
         current.next = new_node
-    def mostrar_lista(self):
-        actual = self.head
-        while actual:
-            print(actual.data)
-            actual = actual.next
+    
+    def show(self, data):
+        output = None
+        if(self.head is not None):
+            current = self.head
+            while current.next is not None:
+                output += str(curre.data)
+                current = current.next
+        else:
+            print("La lista estas vacia") 
 
-            print ("Lista vacía")
+    def delete_value(self, value):
+        current = self.head
+        previous = None
 
-    def eliminar_por_valor(self, valor):
-        actual = self.head
-        anterior = None
-
-        if actual is None:
-            print("Esta lista esta vacía")
+        if current is None:
+            print("Esta lista está vacía")
             return
         
-        if actual.data == valor:
-            self.head = actual.next
+        if current.data == value:
+            self.head = current.next 
             return
         
-        while actual is not None:
-            if actual.data == valor:
-                anterior.next = actual.next
+        while current is not None:
+            if current.data == value:
+                previous.next = current.next 
                 return
-            anterior = actual
-            actual = actual.next
-            print("Valor no encontrado en la lista")
+            
+            previous = current
+            current = current.next
+            
+        print("Valor no encontrado en la lista")
 
-    def invertir_lista(self):
-        actual = self.head
-        anterior = None
+    def reverse_list(self):
+        current = self.head
+        previous = None
 
-        while actual is not None:
-            siguiente = actual.next
-            actual.next = anterior
-            anterior = actual
-            actual = siguiente
+        while current is not None:
+            next_node = current.next
+            
+            current.next = previous
+            
+            previous = current
+            current = next_node
 
-            self.head = anterior 
+        self.head = previous
