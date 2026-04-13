@@ -31,21 +31,19 @@ def menu():
                 
 
             case 3:
-
-                print("Mostrar lista")
+                lista.show()
 
             case 4:
-                valor_bucado = int(input("Ingrese un valor a buscar: "))
-                pos = lista.buscar(valor_buscado)
+                print("Buscar elemento")
 
             case 5:
-                lista.eliminar_primero()
-                print("Se elimino el primer elemento")
+                print("Eliminar primer elemento")
 
             case 6:
                 print("Eliminar por valor")
 
             case 7:
+                print("Tamaño de la lista")
                 print("Tamaño de la lista:", lista.tamaño())
 
             case 8:
