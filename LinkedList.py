@@ -26,43 +26,67 @@ class LinkedList:
         if(self.head is not None):
             current = self.head
             while current.next is not None:
-                output += str(curre.data)
+                output += str(current.data)
                 current = current.next
         else:
-            print("La lista estas vacia") 
-
-    def delete_value(self, value):
+            print("La lista estas vacia")    
+            
+    def look(self, value):
         current = self.head
-        previous = None
+        position = 0
 
-        if current is None:
-            print("Esta lista está vacía")
-            return
-        
-        if current.data == value:
-            self.head = current.next 
-            return
-        
         while current is not None:
             if current.data == value:
-                previous.next = current.next 
-                return
-            
-            previous = current
+                return position
             current = current.next
-            
-        print("Valor no encontrado en la lista")
+            position += 1
 
-    def reverse_list(self):
+        return -1
+    
+    def delete_first_element(self):
+        if self.head is None:
+            print("La lista está vacía, no se puede eliminar")
+        else:
+            self.head = self.head.next
+
+    def size(self):
+        counter = 0
         current = self.head
-        previous = None
 
         while current is not None:
-            next_node = current.next
-            
-            current.next = previous
-            
-            previous = current
-            current = next_node
+            counter += 1
+            current = current.next
 
-        self.head = previous
+        return counter
+    
+    def ordenate(self):
+        if self.head is None:
+            return
+
+        change = True
+
+        while change:
+            change = False
+            current = self.head
+            previous = None
+
+            while current.next is not None:
+                next = current.next
+
+                if current.data > next.data:
+                    # intercambio de nodos (NO de valores)
+                    cambiado = True
+
+                    if previous is None:
+                        self.head = next
+                    else:
+                        previous.next = next
+
+                    current.next = next.next
+                    next.next = current
+
+                    # mover anterior
+                    previous = next
+                else:
+                    previous = current
+                    current = current.next
