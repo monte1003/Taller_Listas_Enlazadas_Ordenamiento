@@ -32,7 +32,6 @@ def menu():
 
             case 3:
                 print("Mostrar lista")
-                # lista.mostrar()
 
             case 4:
                 print("Buscar elemento")
