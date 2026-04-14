@@ -31,7 +31,7 @@ class LinkedList:
         else:
             print("La lista estas vacia")    
             
-    def look(self, value):
+    def search_by_element(self, value):
         current = self.head
         position = 0
 
@@ -57,7 +57,7 @@ class LinkedList:
             counter += 1
             current = current.next
 
-        return counter
+        print(f"The size of the list is {counter}")
     
     def ordenate(self):
         if self.head is None:
@@ -90,3 +90,35 @@ class LinkedList:
                 else:
                     previous = current
                     current = current.next
+
+    def delete_by_value(self, value):
+        current = self.head
+        previous = None
+
+        if current is None:
+            print("Esta lista esta vacía")
+            return
+        
+        if current.data == value:
+            self.head = current.next
+            return
+        
+        while current is not None:
+            if current.data == value:
+                previous.next = current.next
+                return
+            previous = current
+            current = current.next
+        print("Value not found in the list")
+
+    def invest_list(self):
+        current = self.head
+        previous = None
+
+        while current is not None:
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+
+            self.head = previous

@@ -1,7 +1,7 @@
 from LinkedList import LinkedList
 from Node import Node
 def menu():
-    lista = LinkedList()
+    list = LinkedList()
 
     while True:  
         print("\n1. Insertar al inicio")
@@ -22,38 +22,44 @@ def menu():
                 print("Insertar al inicio")
                 data = input("Ingrese la data del nuevo nodo: ")
                 new_node = Node(data)
-                lista.insert_at_beginning(new_node)
+                list.insert_at_beginning(new_node)
 
             case 2:
-                data = input("Ingrese la data del nuevo nodo: ")
+                data = int(input("Ingrese la data del nuevo nodo: "))
                 new_node = Node(data)
-                lista.insert_at_end(new_node)
+                list.insert_at_end(new_node)
                 
 
             case 3:
-                lista.show()
+                list.show()
 
             case 4:
-                print("Buscar elemento")
+                data_search = int(input("Ingrese la data del nodo a buscar: "))
+                num = list.search_by_element(data_search)
+                if num == -1:
+                    print("The element can't exist")
+                else:
+                    print(f"The position of the element is {num}")
 
             case 5:
-                print("Eliminar primer elemento")
+                list.delete_first_element()
 
             case 6:
                 print("Eliminar por valor")
-                valor = int(input("Ingrese el valor a eliminar: "))
-                lista.eliminar_por_valor(valor)
+                value_to_eliminated = int(input("Ingrese el valor a eliminar: "))
+                list.delete_by_value(value_to_eliminated)
 
             case 7:
                 print("Tamaño de la lista")
-                print("Tamaño de la lista:", lista.tamaño())
+                list.size()
 
             case 8:
                 print("Invertir lista")
-                lista.invertir_lista()
+                list.invest_list()
 
             case 9:
                 print("Ordenar lista")
+                list.ordenate()
 
             case 0:
                 print("Saliendo...")
