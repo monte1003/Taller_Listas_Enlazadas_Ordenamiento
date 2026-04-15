@@ -21,12 +21,12 @@ def menu():
             case 1:
                 print("Insertar al inicio")
                 data = input("Ingrese la data del nuevo nodo: ")
-                new_node = Node(data)
+                new_node = data
                 list.insert_at_beginning(new_node)
 
             case 2:
                 data = int(input("Ingrese la data del nuevo nodo: "))
-                new_node = Node(data)
+                new_node = data
                 list.insert_at_end(new_node)
                 
 
@@ -34,7 +34,7 @@ def menu():
                 list.show()
 
             case 4:
-                data_search = int(input("Ingrese la data del nodo a buscar: "))
+                data_search = input("Ingrese la data del nodo a buscar: ")
                 num = list.search_by_element(data_search)
                 if num == -1:
                     print("The element can't exist")
@@ -46,7 +46,7 @@ def menu():
 
             case 6:
                 print("Eliminar por valor")
-                value_to_eliminated = int(input("Ingrese el valor a eliminar: "))
+                value_to_eliminated = input("Ingrese el valor a eliminar: ")
                 list.delete_by_value(value_to_eliminated)
 
             case 7:
